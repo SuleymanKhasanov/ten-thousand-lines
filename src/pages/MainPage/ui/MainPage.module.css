@@ -1,0 +1,315 @@
+/* src/pages/MainPage.module.css */
+.desktop {
+  width: 100%;
+  height: 100vh;
+  background-color: #0d6867; /* Обои Windows 98 */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: 'MS Sans Serif', sans-serif;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.desktop.fadeOut {
+  opacity: 0;
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 10%;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Иконки на рабочем столе */
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.iconImage {
+  width: 3rem;
+  height: 3rem;
+}
+
+.iconLabel {
+  margin-top: 0.3rem;
+  background-color: #fff;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #000;
+  color: #000;
+}
+
+/* Окно */
+.window {
+  width: 95%;
+  max-width: 70rem;
+  height: 90%;
+  max-height: 60rem;
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  box-shadow: 2px 2px 0 #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  animation: scaleIn 0.3s ease; /* Анимация появления */
+}
+
+/* Полноэкранный режим */
+.windowMaximized {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  top: 0;
+  left: 0;
+  transform: none;
+  border: none;
+  box-shadow: none;
+}
+
+.windowHeader {
+  background: linear-gradient(to right, #000080, #1084d0);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.closeButton,
+.minimizeButton,
+.maximizeButton {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid #000;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}
+
+.closeButton {
+  background-color: #ff5f56;
+}
+
+.minimizeButton {
+  background-color: #ffbd2e;
+}
+
+.maximizeButton {
+  background-color: #27c93f;
+}
+
+.windowTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.windowBody {
+  padding: 1rem;
+  background-color: #fff;
+  flex: 1;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Браузер Internet Explorer */
+.browser {
+  flex: 1;
+  border: 1px solid #000;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.browserHeader {
+  background: linear-gradient(to right, #000080, #1084d0);
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.browserTitle {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.browserToolbar {
+  background-color: #c0c0c0;
+  padding: 0.3rem;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #000;
+}
+
+.toolbarButton {
+  background-color: #c0c0c0;
+  border: 1px solid #000;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.browserContent {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.quote {
+  font-style: italic;
+  color: #008000;
+  margin-bottom: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.image {
+  width: 100%;
+  max-width: 15rem;
+  height: auto;
+  margin: 1rem 0;
+  display: block;
+  image-rendering: pixelated; /* Для пиксельного стиля */
+}
+
+.minimizedWindow {
+  position: absolute;
+  bottom: 0.625rem;
+  left: 0.625rem;
+  background-color: #c0c0c0;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+/* Окно проигрывателя */
+.playerWindow {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 15rem;
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  box-shadow: 2px 2px 0 #000;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.playerHeader {
+  background: linear-gradient(to right, #000080, #1084d0);
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.playerBody {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.5rem;
+}
+
+.playerButton {
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  padding: 0.3rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 #000;
+  transition: all 0.1s;
+  color: #000;
+}
+
+.playerButton:hover {
+  background-color: #d0d0d0;
+}
+
+.playerButton:active {
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  box-shadow: none;
+  transform: translate(1px, 1px);
+}
+
+.playerIcon {
+  font-size: 20px;
+  color: #000 !important;
+}
+
+@media (max-width: 600px) {
+  .window {
+    width: 98%;
+    height: 95%;
+  }
+
+  .windowMaximized {
+    width: 100%;
+    height: 100%;
+  }
+
+  .iconImage {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .iconLabel {
+    font-size: 0.625rem;
+  }
+
+  .playerWindow {
+    width: 10rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .window {
+    width: 100%;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}

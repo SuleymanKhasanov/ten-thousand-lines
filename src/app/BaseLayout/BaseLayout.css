@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+body {
+  background-color: #000;
+}
+
+/* src/index.css */
+html {
+  /* Базовый размер шрифта: 16px по умолчанию (1rem = 16px) */
+  font-size: 16px;
+}
+
+/* Для экранов с шириной больше 1200px (например, большие мониторы и телевизоры) */
+@media (min-width: 1200px) {
+  html {
+    font-size: 18px; /* Увеличиваем базовый размер для больших экранов */
+  }
+}
+
+/* Для экранов с шириной больше 1920px (например, 4K телевизоры) */
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px; /* Ещё больше увеличиваем для 4K */
+  }
+}
+
+/* Для маленьких экранов (мобильные устройства) */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px; /* Уменьшаем базовый размер для маленьких экранов */
+  }
+}
